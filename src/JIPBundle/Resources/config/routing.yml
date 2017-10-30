@@ -1,0 +1,3 @@
+jip_homepage:
+    path:     /
+    defaults: { _controller: JIPBundle:Default:index }

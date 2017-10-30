@@ -13,9 +13,14 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        try {
+            $this->getDoctrine()->getEntityManager()->getConnection()->connect();
+            var_dump('connecte');
+        } catch (\Exception $e) {
+            // failed to connect
+            var_dump('failed to connect');
+        }
+
+        die;
     }
 }
