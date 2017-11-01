@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all,follow">
+        {% include ':admin:style.html.twig' %}
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <div class="page home-page">
+            {% include ':admin:header.html.twig' %}
+            <div class="page-content d-flex align-items-stretch">
+                {% include ':admin:sidenav.html.twig' %}
+                <div class="content-inner">
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+            {% include ':admin:javascript.html.twig' %}
+            {% block javascripts %}{% endblock %}
+        </div>
+    </body>
+</html>
