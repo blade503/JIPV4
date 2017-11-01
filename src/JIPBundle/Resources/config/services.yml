@@ -2,3 +2,6 @@ services:
 #    jip.example:
 #        class: JIPBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+    jip.manager.annonce:
+        class: JIPBundle\Manager\AnnonceManager
+        arguments: ["@doctrine.orm.entity_manager"]

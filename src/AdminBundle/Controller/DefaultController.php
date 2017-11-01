@@ -8,6 +8,10 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('AdminBundle:Default:index.html.twig');
+        $annonces = $this->get('jip.manager.annonce')->getAllAnnonces();
+
+        return $this->render('AdminBundle:annonce:new.html.twig', array(
+            'annonces' => $annonces)
+        );
     }
 }
