@@ -3,14 +3,14 @@
 namespace JIPBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="annonce")
+ * @ORM\Table(name="contact")
  */
-class Annonce
+class Contact
 {
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -19,28 +19,29 @@ class Annonce
     private $id;
 
     /**
-     * @ORM\Column(name ="titre", type="string")
+     * @ORM\Column(name ="name", type="string", length=150)
      */
-    private $title;
+    private $name;
 
     /**
-     * @ORM\Column(name="description", type="string", nullable = true, length=2000)
+     * @ORM\Column(name="email", type="string", length=150)
      */
-    private $description;
+    private $email;
 
     /**
-     * @ORM\Column(name="lien", type="string", nullable = false, length=500)
+     * @ORM\Column(name="phone", type="string", length=15)
      */
-    private $lien;
+    private $phone;
 
     /**
-     * @ORM\Column(type="string", nullable = true)
-     *
-     * @Assert\NotBlank(message="Les Fichiers doivent etre des images")
-     * @Assert\File(mimeTypes={ "image/png", "image/jpg", "image/jpeg", "application/octet-stream" })
+     * @ORM\Column(name="message", type="string", length=2000)
      */
+    private $message;
 
-    private $image;
+    /**
+     * @ORM\Column(name="statut", type="integer")
+     */
+    private $statut;
 
     /**
      * @ORM\Column(name="created_at", type="datetime")
@@ -57,11 +58,18 @@ class Annonce
      */
     private $deletedAt;
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->setStatut(Contact::CONTACT_NEW);
+    }
 
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -69,99 +77,118 @@ class Annonce
     }
 
     /**
-     * Set title
+     * Set name
      *
-     * @param string $title
-     *
-     * @return Annonce
+     * @param string $name
+     * @return Contact
      */
-    public function setTitle($title)
+    public function setName($name)
     {
-        $this->title = $title;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Get title
+     * Get name
      *
-     * @return string
+     * @return string 
      */
-    public function getTitle()
+    public function getName()
     {
-        return $this->title;
+        return $this->name;
     }
 
     /**
-     * Set description
+     * Set email
      *
-     * @param string $description
-     *
-     * @return Annonce
+     * @param string $email
+     * @return Contact
      */
-    public function setDescription($description)
+    public function setEmail($email)
     {
-        $this->description = $description;
+        $this->email = $email;
 
         return $this;
     }
 
     /**
-     * Get description
+     * Get email
      *
-     * @return string
+     * @return string 
      */
-    public function getDescription()
+    public function getEmail()
     {
-        return $this->description;
+        return $this->email;
     }
 
     /**
-     * Set lien
+     * Set message
      *
-     * @param string $lien
-     *
-     * @return Annonce
+     * @param string $message
+     * @return Contact
      */
-    public function setLien($lien)
+    public function setMessage($message)
     {
-        $this->lien = $lien;
+        $this->message = $message;
 
         return $this;
     }
 
     /**
-     * Get lien
+     * Get message
      *
-     * @return string
+     * @return string 
      */
-    public function getLien()
+    public function getMessage()
     {
-        return $this->lien;
+        return $this->message;
     }
 
     /**
-     * Set image
+     * Set statut
      *
-     * @param string $image
-     *
-     * @return Annonce
+     * @param integer $statut
+     * @return Contact
      */
-    public function setImage($image)
+    public function setStatut($statut)
     {
-        $this->image = $image;
+        $this->statut = $statut;
 
         return $this;
     }
 
     /**
-     * Get image
+     * Get statut
+     *
+     * @return integer 
+     */
+    public function getStatut()
+    {
+        return $this->statut;
+    }
+
+    /**
+     * Set phone
+     *
+     * @param string $phone
+     * @return Contact
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Get phone
      *
      * @return string
      */
-    public function getImage()
+    public function getPhone()
     {
-        return $this->image;
+        return $this->phone;
     }
 
     /**
@@ -169,7 +196,7 @@ class Annonce
      *
      * @param \DateTime $createdAt
      *
-     * @return Annonce
+     * @return Contact
      */
     public function setCreatedAt($createdAt)
     {
@@ -193,7 +220,7 @@ class Annonce
      *
      * @param \DateTime $updatedAt
      *
-     * @return Annonce
+     * @return Contact
      */
     public function setUpdatedAt($updatedAt)
     {
@@ -217,7 +244,7 @@ class Annonce
      *
      * @param \DateTime $deletedAt
      *
-     * @return Annonce
+     * @return Contact
      */
     public function setDeletedAt($deletedAt)
     {
