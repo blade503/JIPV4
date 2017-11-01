@@ -12,4 +12,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class AnnonceRepository extends EntityRepository
 {
+
+    public function getAllAnnonces()
+    {
+        return $this->createQueryBuilder('d')
+            ->addOrderBy('d.id', "DESC")
+            ;
+    }
+
 }

@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="JIPBundle\Repository\AnnonceRepository")
  * @ORM\Table(name="annonce")
  */
 class Annonce
@@ -19,7 +19,7 @@ class Annonce
     private $id;
 
     /**
-     * @ORM\Column(name ="titre", type="string")
+     * @ORM\Column(name ="title", type="string")
      */
     private $title;
 
@@ -29,9 +29,9 @@ class Annonce
     private $description;
 
     /**
-     * @ORM\Column(name="lien", type="string", nullable = false, length=500)
+     * @ORM\Column(name="link", type="string", nullable = false, length=500)
      */
-    private $lien;
+    private $link;
 
     /**
      * @ORM\Column(type="string", nullable = true)
@@ -117,27 +117,27 @@ class Annonce
     }
 
     /**
-     * Set lien
+     * Set link
      *
-     * @param string $lien
+     * @param string $link
      *
      * @return Annonce
      */
-    public function setLien($lien)
+    public function setLink($link)
     {
-        $this->lien = $lien;
+        $this->link = $link;
 
         return $this;
     }
 
     /**
-     * Get lien
+     * Get link
      *
      * @return string
      */
-    public function getLien()
+    public function getLink()
     {
-        return $this->lien;
+        return $this->link;
     }
 
     /**
