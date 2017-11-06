@@ -10,7 +10,7 @@ class DefaultController extends Controller
     {
         $annonces = $this->get('jip.manager.annonce')->getAllAnnonces();
 
-        return $this->render('AdminBundle:annonce:new.html.twig', array(
+        return $this->render('AdminBundle:annonce:index.html.twig', array(
             'annonces' => $annonces)
         );
     }
