@@ -3,7 +3,7 @@
 namespace AdminBundle\Controller;
 
 use JIPBundle\Entity\Annonce;
-use AdminBundle\Form\AnnonceType;
+use AdminBundle\Form\Type\AnnonceType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class AnnonceController extends Controller
