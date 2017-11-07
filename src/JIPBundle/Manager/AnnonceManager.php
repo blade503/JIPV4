@@ -39,6 +39,12 @@ class AnnonceManager extends BaseManager
         $this->persistAndFlush($annonce);
     }
 
+    public function setCreationDateValue(Annonce $annonce)
+    {
+        $annonce->setCreatedAt(new \DateTime('now'));
+        $annonce->setUpdatedAt(new \DateTime('now'));
+    }
+
     /**
      * Save Annonce entity
      *

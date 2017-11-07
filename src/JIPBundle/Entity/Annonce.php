@@ -36,9 +36,9 @@ class Annonce
     /**
      * @ORM\Column(type="string", nullable = true)
      *
-     * @Assert\NotBlank(message="Les Fichiers doivent etre des images")
      * @Assert\File(mimeTypes={ "image/png", "image/jpg", "image/jpeg", "application/octet-stream" })
      */
+    //@Assert\NotBlank(message="Les Fichiers doivent etre des images")
 
     private $image;
 
@@ -53,7 +53,7 @@ class Annonce
     private $updatedAt;
 
     /**
-     * @ORM\Column(name="deleted_at", type="datetime")
+     * @ORM\Column(name="deleted_at", type="datetime", nullable=true)
      */
     private $deletedAt;
 
