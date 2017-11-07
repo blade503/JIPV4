@@ -44,7 +44,7 @@ class AnnonceManager extends BaseManager
      *
      * @param Annonce $annonce
      */
-    public function deletennonce(Annonce $annonce)
+    public function deleteAnnonce(Annonce $annonce)
     {
         $this->removeAndFlush($annonce);
     }

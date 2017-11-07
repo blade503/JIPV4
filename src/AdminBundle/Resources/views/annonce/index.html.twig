@@ -32,7 +32,7 @@
                                     <td>{{ annonce.title }}</td>
                                     <td>{{ annonce.description }}</td>
                                     <td>{{ annonce.link }}</td>
-                                    <td><a href="{{ url('admin_annonce_edit', {'id': annonce.id}) }}"class="btn btn-info m-l-25">Modifier</a><a href="{{ url('admin_annonce_delete') }}" class="btn btn-danger m-l-25">Supprimer</a></td>
+                                    <td><a href="{{ url('admin_annonce_edit', {'id': annonce.id}) }}"class="btn btn-info m-l-25">Modifier</a><a href="{{ url('admin_annonce_remove', {'id': annonce.id}) }}" class="btn btn-danger m-l-25">Supprimer</a></td>
                                 </tr>
                             {% endfor %}
                             </tbody>

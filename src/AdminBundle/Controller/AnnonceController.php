@@ -61,7 +61,7 @@ class AnnonceController extends Controller
     public function removeAction($id)
     {
         $annonce = $this->get('jip.manager.annonce')->findAnnonceById($id);
-        $this->get('jip.manager.annonce')->deletennonce($annonce);
+        $this->get('jip.manager.annonce')->deleteAnnonce($annonce);
 
         return $this->redirectToRoute('admin_annonce_index');
     }
