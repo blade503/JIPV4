@@ -17,6 +17,11 @@
             <div class="page-content d-flex align-items-stretch">
                 {% include ':admin:sidenav.html.twig' %}
                 <div class="content-inner">
+                    <header class="page-header">
+                        <div class="container-fluid">
+                            <h2 class="no-margin-bottom">{% block pageHeader %}{% endblock %}</h2>
+                        </div>
+                    </header>
                     {% block body %}{% endblock %}
                 </div>
             </div>

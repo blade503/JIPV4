@@ -40,7 +40,3 @@
 
 # Backup entities generated with doctrine:generate:entities command
 **/Entity/*~
-
-
-#Fichier De Config PHPStorm
-.idea/
