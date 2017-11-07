@@ -1,0 +1,46 @@
+
+{% extends ":admin:base.html.twig" %}
+
+{% block pageHeader %}Admin > Annonce > Modifier{% endblock %}
+
+{%  block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="card">
+                    <div class="card-close">
+                        <div class="dropdown">
+                            <button type="button" id="closeCard" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+                            <div aria-labelledby="closeCard" class="dropdown-menu has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+                        </div>
+                    </div>
+                    {{ form_errors(form) }}
+                    <div class="card-header d-flex align-items-center">
+                        <h3 class="h4">Ajouter une annonce</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Veuillez saisir les informations de l'annonce à publier</p>
+                        {{ form_start(form) }}
+                        <div class="form-group">
+                            {{ form_label(form.title) }}
+                            {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form.link) }}
+                            {{ form_widget(form.link, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form.description) }}
+                            {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

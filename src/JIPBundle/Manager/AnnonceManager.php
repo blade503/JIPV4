@@ -39,6 +39,16 @@ class AnnonceManager extends BaseManager
         $this->persistAndFlush($annonce);
     }
 
+    /**
+     * Save Annonce entity
+     *
+     * @param Annonce $annonce
+     */
+    public function deleteAnnonce(Annonce $annonce)
+    {
+        $this->removeAndFlush($annonce);
+    }
+
     public function getRepository()
     {
         return $this->em->getRepository('JIPBundle:Annonce');

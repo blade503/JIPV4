@@ -2,3 +2,18 @@ admin_homepage:
     path:     /
     defaults: { _controller: AdminBundle:Default:index }
 
+admin_annonce_index:
+    path:     /annonce
+    defaults: { _controller: AdminBundle:Annonce:index }
+
+admin_annonce_new:
+    path:     /annonce/new
+    defaults: { _controller: AdminBundle:Annonce:new }
+
+admin_annonce_edit:
+    path:     /annonce/edit/{id}
+    defaults: { _controller: AdminBundle:Annonce:edit }
+
+admin_annonce_remove:
+    path:     /annonce/remove/{id}
+    defaults: { _controller: AdminBundle:Annonce:remove }
